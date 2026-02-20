@@ -1,0 +1,94 @@
+{
+  "type": "object",
+  "required": [
+    "email_address",
+    "status",
+    "merge_fields",
+    "tags"
+  ],
+  "properties": {
+    "email_address": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "subscribed",
+        "unsubscribed",
+        "cleaned",
+        "pending",
+        "transactional"
+      ]
+    },
+    "merge_fields": {
+      "type": "object",
+      "required": [
+        "FNAME",
+        "LNAME",
+        "TOTAL_OPEN_DEALS",
+        "TOTAL_PRODUCT_SUM",
+        "TOTAL_DISCOUNT_SUM",
+        "NET_PIPELINE",
+        "BEST_BUCKET"
+      ],
+      "properties": {
+        "FNAME": {
+          "type": "string"
+        },
+        "LNAME": {
+          "type": "string"
+        },
+        "TOTAL_OPEN_DEALS": {
+          "type": "string"
+        },
+        "TOTAL_PRODUCT_SUM": {
+          "type": "string"
+        },
+        "TOTAL_DISCOUNT_SUM": {
+          "type": "string"
+        },
+        "NET_PIPELINE": {
+          "type": "string"
+        },
+        "BEST_BUCKET": {
+          "type": "string",
+          "enum": [
+            "cold",
+            "warm",
+            "hot"
+          ]
+        }
+      },
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "minItems": 3,
+      "allOf": [
+        {
+          "contains": {
+            "type": "string",
+            "pattern": "open_deals_"
+          }
+        },
+        {
+          "contains": {
+            "type": "string",
+            "pattern": "pipeline_"
+          }
+        },
+        {
+          "contains": {
+            "type": "string",
+            "pattern": "net_"
+          }
+        }
+      ],
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

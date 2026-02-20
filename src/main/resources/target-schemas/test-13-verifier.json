@@ -1,0 +1,61 @@
+{
+  "type": "object",
+  "required": [
+    "email",
+    "dataFields"
+  ],
+  "properties": {
+    "email": {
+      "type": "string",
+      "const": "thomas.jefferson@example.com"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "dataFields": {
+      "type": "object",
+      "required": [
+        "full_name",
+        "phoneNumber",
+        "favorite_restaurants",
+        "profile_updated_at",
+        "source_system"
+      ],
+      "properties": {
+        "full_name": {
+          "type": "string",
+          "const": "Thomas Jefferson"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "pattern": "^\\+1"
+        },
+        "favorite_restaurants": {
+          "type": "array",
+          "allOf": [
+            {
+              "contains": {
+                "type": "string",
+                "const": "Papa John"
+              }
+            },
+            {
+              "contains": {
+                "type": "string",
+                "const": "Pizza Hut"
+              }
+            }
+          ]
+        },
+        "profile_updated_at": {
+          "type": "number",
+          "const": 1763416678
+        },
+        "source_system": {
+          "type": "string",
+          "const": "hubspot"
+        }
+      }
+    }
+  }
+}

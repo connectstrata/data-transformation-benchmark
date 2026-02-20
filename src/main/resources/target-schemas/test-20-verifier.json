@@ -1,0 +1,134 @@
+{
+  "type": "object",
+  "required": [
+    "email",
+    "userId",
+    "dataFields"
+  ],
+  "properties": {
+    "email": {
+      "type": "string",
+      "const": "rose@edge.com"
+    },
+    "userId": {
+      "type": "string",
+      "const": "003gL000001pOUVQA2"
+    },
+    "dataFields": {
+      "type": "object",
+      "required": [
+        "full_name",
+        "account_name",
+        "title",
+        "work_phone",
+        "mobile_phone",
+        "opportunity_count",
+        "max_probability",
+        "avg_probability",
+        "next_close_date",
+        "forecast_categories",
+        "opportunity_summaries"
+      ],
+      "properties": {
+        "full_name": {
+          "type": "string",
+          "const": "Rose Gonzalez"
+        },
+        "account_name": {
+          "type": "string",
+          "const": "Dunder Mifflin"
+        },
+        "title": {
+          "type": "string",
+          "const": "SVP, Procurement"
+        },
+        "work_phone": {
+          "type": "string",
+          "pattern": "512.*757.*6000"
+        },
+        "mobile_phone": {
+          "type": "string",
+          "pattern": "512.*757.*9340"
+        },
+        "opportunity_count": {
+          "type": "integer",
+          "const": 2
+        },
+        "max_probability": {
+          "type": "integer",
+          "const": 99
+        },
+        "avg_probability": {
+          "type": "number",
+          "const": 87
+        },
+        "next_close_date": {
+          "type": "string",
+          "const": "2025-11-01"
+        },
+        "forecast_categories": {
+          "type": "array",
+          "allOf": [
+            {
+              "contains": {
+                "type": "string",
+                "const": "Pipeline"
+              }
+            },
+            {
+              "contains": {
+                "type": "string",
+                "const": "Legal Review"
+              }
+            }
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "opportunity_summaries": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "allOf": [
+            {
+              "contains": {
+                "type": "string",
+                "allOf": [
+                  {
+                    "pattern": "30 Day Pilot"
+                  },
+                  {
+                    "pattern": "75"
+                  },
+                  {
+                    "pattern": "2025-11-01"
+                  }
+                ]
+              }
+            },
+            {
+              "contains": {
+                "type": "string",
+                "allOf": [
+                  {
+                    "pattern": "SaaS Subscription"
+                  },
+                  {
+                    "pattern": "99"
+                  },
+                  {
+                    "pattern": "2025-11-01"
+                  }
+                ]
+              }
+            }
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "required": [
+    "email_address",
+    "status",
+    "merge_fields"
+  ],
+  "properties": {
+    "email_address": {
+      "type": "string",
+      "const": "thomas.jefferson@example.com"
+    },
+    "status": {
+      "type": "string",
+      "const": "subscribed"
+    },
+    "merge_fields": {
+      "type": "object",
+      "required": [
+        "FNAME",
+        "LNAME"
+      ],
+      "properties": {
+        "FNAME": {
+          "type": "string",
+          "const": "Thomas"
+        },
+        "LNAME": {
+          "type": "string",
+          "const": "Jefferson"
+        }
+      },
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
+}

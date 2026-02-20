@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "required": [
+    "email_address",
+    "status",
+    "merge_fields"
+  ],
+  "properties": {
+    "email_address": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "subscribed",
+        "unsubscribed",
+        "cleaned",
+        "pending",
+        "transactional"
+      ]
+    },
+    "merge_fields": {
+      "type": "object",
+      "required": [
+        "FNAME",
+        "LNAME"
+      ],
+      "properties": {
+        "FNAME": {
+          "type": "string"
+        },
+        "LNAME": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
+}

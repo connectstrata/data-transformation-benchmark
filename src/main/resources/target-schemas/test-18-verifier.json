@@ -1,0 +1,356 @@
+{
+  "type": "object",
+  "required": [
+    "first_name",
+    "last_name",
+    "email_address",
+    "job_title",
+    "company_name",
+    "create_source",
+    "street_addresses",
+    "phone_numbers",
+    "notes"
+  ],
+  "properties": {
+    "email_address": {
+      "required": [
+        "address",
+        "permission_to_send"
+      ],
+      "type": "object",
+      "properties": {
+        "address": {
+          "maxLength": 80,
+          "type": "string",
+          "description": "The contact's email address.",
+          "const": "rose@edge.com"
+        },
+        "permission_to_send": {
+          "type": "string",
+          "description": "Identifies the type of permission that the Constant Contact account has been granted to send email to the contact.",
+          "const": "implicit"
+        }
+      },
+      "description": "The contact's email address and related properties."
+    },
+    "first_name": {
+      "maxLength": 50,
+      "type": "string",
+      "description": "The first name of the contact.",
+      "const": "Rose"
+    },
+    "last_name": {
+      "maxLength": 50,
+      "type": "string",
+      "description": "The last name of the contact.",
+      "const": "Gonzalez"
+    },
+    "job_title": {
+      "maxLength": 50,
+      "type": "string",
+      "description": "The job title of the contact.",
+      "const": "SVP, Procurement"
+    },
+    "company_name": {
+      "maxLength": 50,
+      "type": "string",
+      "description": "The name of the company where the contact works.",
+      "const": "Dunder Mifflin"
+    },
+    "create_source": {
+      "type": "string",
+      "description": "Describes who added the contact; valid values are Contact or Account.",
+      "const": "Account"
+    },
+    "birthday_month": {
+      "type": "integer",
+      "description": "The month value for the contact's birthday."
+    },
+    "birthday_day": {
+      "type": "integer",
+      "description": "The day value for the contact's birthday."
+    },
+    "anniversary": {
+      "maxLength": 10,
+      "type": "string",
+      "description": "The anniversary date for the contact."
+    },
+    "custom_fields": {
+      "maxItems": 25,
+      "type": "array",
+      "items": {
+        "required": [
+          "custom_field_id",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "custom_field_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "value": {
+            "maxLength": 255,
+            "type": "string"
+          }
+        }
+      }
+    },
+    "phone_numbers": {
+      "maxItems": 3,
+      "type": "array",
+      "description": "Array of up to 3 phone numbers subresources.",
+      "allOf": [
+        {
+          "contains": {
+            "type": "object",
+            "required": [
+              "phone_number",
+              "kind"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "work"
+              },
+              "phone_number": {
+                "type": "string",
+                "pattern": "512.*757.*6000"
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "required": [
+              "phone_number",
+              "kind"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "mobile"
+              },
+              "phone_number": {
+                "type": "string",
+                "pattern": "512.*757.*9340"
+              }
+            }
+          }
+        }
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "phone_number": {
+            "maxLength": 25,
+            "type": "string",
+            "description": "The contact's phone number."
+          },
+          "kind": {
+            "type": "string",
+            "description": "Identifies the type of phone number; valid values are home, work, mobile, or other."
+          }
+        }
+      }
+    },
+    "street_addresses": {
+      "maxItems": 3,
+      "type": "array",
+      "description": "Array of up to 3 street address subresources.",
+      "contains": {
+        "type": "object",
+        "required": [
+          "kind",
+          "street",
+          "city",
+          "state",
+          "postal_code",
+          "country"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "const": "home"
+          },
+          "street": {
+            "type": "string",
+            "const": "313 Constitution Place"
+          },
+          "city": {
+            "type": "string",
+            "const": "Austin"
+          },
+          "state": {
+            "type": "string",
+            "const": "Texas"
+          },
+          "postal_code": {
+            "type": "string",
+            "const": "78767"
+          },
+          "country": {
+            "type": "string",
+            "const": "USA"
+          }
+        }
+      },
+      "items": {
+        "required": [
+          "kind"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "street": {
+            "maxLength": 255,
+            "type": "string"
+          },
+          "city": {
+            "maxLength": 50,
+            "type": "string"
+          },
+          "state": {
+            "maxLength": 50,
+            "type": "string"
+          },
+          "postal_code": {
+            "maxLength": 50,
+            "type": "string"
+          },
+          "country": {
+            "maxLength": 50,
+            "type": "string"
+          }
+        }
+      }
+    },
+    "list_memberships": {
+      "maxItems": 50,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      }
+    },
+    "taggings": {
+      "maxItems": 50,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      }
+    },
+    "notes": {
+      "maxItems": 150,
+      "type": "array",
+      "description": "An array of notes about the contact.",
+      "allOf": [
+        {
+          "contains": {
+            "type": "object",
+            "required": [
+              "content"
+            ],
+            "properties": {
+              "content": {
+                "type": "string",
+                "allOf": [
+                  {
+                    "pattern": "30 Day Pilot"
+                  },
+                  {
+                    "pattern": "Proposal/Price Quote"
+                  },
+                  {
+                    "pattern": "75"
+                  },
+                  {
+                    "pattern": "2025-11-01"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "required": [
+              "content"
+            ],
+            "properties": {
+              "content": {
+                "type": "string",
+                "allOf": [
+                  {
+                    "pattern": "SaaS Subscription"
+                  },
+                  {
+                    "pattern": "Proposal/Price Quote"
+                  },
+                  {
+                    "pattern": "99"
+                  },
+                  {
+                    "pattern": "2025-11-01"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "note_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "content": {
+            "maxLength": 2000,
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sms_channel": {
+      "required": [
+        "full_sms_address",
+        "sms_channel_consents"
+      ],
+      "type": "object",
+      "properties": {
+        "full_sms_address": {
+          "type": "string"
+        },
+        "sms_channel_consents": {
+          "type": "array",
+          "items": {
+            "required": [
+              "consent_type",
+              "sms_consent_permission"
+            ],
+            "type": "object",
+            "properties": {
+              "sms_consent_permission": {
+                "type": "string"
+              },
+              "consent_type": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

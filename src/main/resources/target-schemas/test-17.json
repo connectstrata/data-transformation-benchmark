@@ -1,0 +1,287 @@
+{
+  "type": "object",
+  "required": [
+    "first_name",
+    "last_name",
+    "email_address",
+    "job_title",
+    "company_name",
+    "create_source",
+    "birthday_month",
+    "birthday_day",
+    "street_addresses",
+    "phone_numbers",
+    "notes"
+  ],
+  "properties": {
+    "email_address": {
+      "type": "object",
+      "required": [
+        "address",
+        "permission_to_send"
+      ],
+      "properties": {
+        "address": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "The contact's email address."
+        },
+        "permission_to_send": {
+          "type": "string",
+          "description": "Permission Constant Contact has to send email to the contact."
+        }
+      }
+    },
+    "first_name": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "last_name": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "job_title": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "company_name": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "create_source": {
+      "type": "string",
+      "enum": [
+        "Contact",
+        "Account"
+      ]
+    },
+    "birthday_month": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12
+    },
+    "birthday_day": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 31
+    },
+    "phone_numbers": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 3,
+      "allOf": [
+        {
+          "contains": {
+            "type": "object",
+            "required": [
+              "kind",
+              "phone_number"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "work"
+              },
+              "phone_number": {
+                "type": "string",
+                "pattern": "512.*757.*6000"
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "required": [
+              "kind",
+              "phone_number"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "mobile"
+              },
+              "phone_number": {
+                "type": "string",
+                "pattern": "512.*757.*9340"
+              }
+            }
+          }
+        }
+      ],
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "phone_number"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "phone_number": {
+            "type": "string",
+            "maxLength": 25
+          }
+        }
+      }
+    },
+    "street_addresses": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "contains": {
+        "type": "object",
+        "required": [
+          "kind",
+          "street",
+          "city",
+          "state",
+          "postal_code",
+          "country"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "const": "home"
+          },
+          "street": {
+            "type": "string",
+            "maxLength": 255
+          },
+          "city": {
+            "type": "string",
+            "maxLength": 50
+          },
+          "state": {
+            "type": "string",
+            "maxLength": 50
+          },
+          "postal_code": {
+            "type": "string",
+            "maxLength": 50
+          },
+          "country": {
+            "type": "string",
+            "maxLength": 50
+          }
+        }
+      },
+      "items": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "street": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "postal_code": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "description": "One note per eligible Pipedrive deal.",
+      "minItems": 2,
+      "maxItems": 2,
+      "allOf": [
+        {
+          "contains": {
+            "type": "object",
+            "required": [
+              "content"
+            ],
+            "properties": {
+              "content": {
+                "type": "string",
+                "allOf": [
+                  {
+                    "pattern": "30 Day Pilot"
+                  },
+                  {
+                    "pattern": "Proposal/Price Quote"
+                  },
+                  {
+                    "pattern": "open"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "required": [
+              "content"
+            ],
+            "properties": {
+              "content": {
+                "type": "string",
+                "allOf": [
+                  {
+                    "pattern": "SaaS Subscription"
+                  },
+                  {
+                    "pattern": "Proposal/Price Quote"
+                  },
+                  {
+                    "pattern": "open"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "items": {
+        "type": "object",
+        "required": [
+          "content",
+          "probability_bucket",
+          "product_total",
+          "discount_total",
+          "net_total"
+        ],
+        "properties": {
+          "content": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "probability_bucket": {
+            "type": "string",
+            "enum": [
+              "cold",
+              "warm",
+              "hot"
+            ]
+          },
+          "product_total": {
+            "type": "number"
+          },
+          "discount_total": {
+            "type": "number"
+          },
+          "net_total": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

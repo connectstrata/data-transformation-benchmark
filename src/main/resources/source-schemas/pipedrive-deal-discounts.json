@@ -1,0 +1,68 @@
+{
+  "type": "object",
+  "required": [
+    "data"
+  ],
+  "properties": {
+    "data": {
+      "type": "array",
+      "description": "Array containing data for all discounts added to a deal",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "amount",
+          "description",
+          "deal_id",
+          "created_at",
+          "created_by",
+          "updated_at",
+          "updated_by"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the additional discount"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "percentage",
+              "amount"
+            ],
+            "description": "Discount type"
+          },
+          "amount": {
+            "type": "number",
+            "description": "The discount amount"
+          },
+          "description": {
+            "type": "string",
+            "description": "The name of the discount"
+          },
+          "deal_id": {
+            "type": "integer",
+            "description": "The ID of the deal"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "Creation time in ISO 8601"
+          },
+          "created_by": {
+            "type": "integer",
+            "description": "Creator user ID"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "Update time in ISO 8601"
+          },
+          "updated_by": {
+            "type": "integer",
+            "description": "Updater user ID"
+          }
+        }
+      }
+    }
+  }
+}

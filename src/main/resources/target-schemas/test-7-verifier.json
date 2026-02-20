@@ -1,0 +1,45 @@
+{
+  "type": "object",
+  "required": [
+    "email_address",
+    "first_name",
+    "last_name",
+    "job_title",
+    "create_source"
+  ],
+  "properties": {
+    "email_address": {
+      "type": "object",
+      "required": [
+        "address",
+        "permission_to_send"
+      ],
+      "properties": {
+        "address": {
+          "type": "string",
+          "const": "rose@edge.com"
+        },
+        "permission_to_send": {
+          "type": "string",
+          "const": "implicit"
+        }
+      }
+    },
+    "first_name": {
+      "type": "string",
+      "const": "Rose"
+    },
+    "last_name": {
+      "type": "string",
+      "const": "Gonzalez"
+    },
+    "job_title": {
+      "type": "string",
+      "const": "SVP, Procurement"
+    },
+    "create_source": {
+      "type": "string",
+      "const": "Contact"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "email": "test@iterable.com",
+  "userId": "test",
+  "dataFields": {
+    "first_name": "John",
+    "last_name": "McLain",
+    "city_name": "Chicago",
+    "pop_cat_city_id": "1",
+    "hobbies": [{
+      "category": "Fitness",
+      "name": "Swimming",
+      "code": 123
+    },{
+      "category": "Events",
+      "name": "Attending Concerts",
+      "code": 197
+    },{
+      "category": "Food",
+      "name": "Cooking",
+      "code": 999
+    }],
+    "app_installed": false,
+    "acquisition_source": "social",
+    "zip_code": 94103
+  }
+}

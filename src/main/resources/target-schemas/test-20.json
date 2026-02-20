@@ -1,0 +1,103 @@
+{
+  "type": "object",
+  "required": [
+    "email",
+    "userId",
+    "dataFields"
+  ],
+  "properties": {
+    "email": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "dataFields": {
+      "type": "object",
+      "required": [
+        "full_name",
+        "account_name",
+        "title",
+        "work_phone",
+        "mobile_phone",
+        "opportunity_count",
+        "max_probability",
+        "avg_probability",
+        "next_close_date",
+        "forecast_categories",
+        "opportunity_summaries"
+      ],
+      "properties": {
+        "full_name": {
+          "type": "string"
+        },
+        "account_name": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "work_phone": {
+          "type": "string",
+          "pattern": "512.*757.*6000"
+        },
+        "mobile_phone": {
+          "type": "string",
+          "pattern": "512.*757.*9340"
+        },
+        "opportunity_count": {
+          "type": "integer"
+        },
+        "max_probability": {
+          "type": "integer"
+        },
+        "avg_probability": {
+          "type": "number"
+        },
+        "next_close_date": {
+          "type": "string"
+        },
+        "forecast_categories": {
+          "type": "array",
+          "allOf": [
+            {
+              "contains": {
+                "type": "string"
+              }
+            },
+            {
+              "contains": {
+                "type": "string"
+              }
+            }
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "opportunity_summaries": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "allOf": [
+            {
+              "contains": {
+                "type": "string",
+                "pattern": "30 Day Pilot"
+              }
+            },
+            {
+              "contains": {
+                "type": "string",
+                "pattern": "SaaS Subscription"
+              }
+            }
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

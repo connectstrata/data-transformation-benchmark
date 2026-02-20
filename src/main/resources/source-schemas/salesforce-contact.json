@@ -1,0 +1,262 @@
+{
+  "type": "object",
+  "description": "Salesforce Contact record",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Salesforce record ID"
+    },
+    "IsDeleted": {
+      "type": "boolean"
+    },
+    "MasterRecordId": {
+      "type": ["string", "null"]
+    },
+    "AccountId": {
+      "type": ["string", "null"],
+      "description": "ID of the associated Account"
+    },
+    "LastName": {
+      "type": "string",
+      "description": "Contact's last name"
+    },
+    "FirstName": {
+      "type": "string",
+      "description": "Contact's first name"
+    },
+    "Salutation": {
+      "type": ["string", "null"],
+      "description": "Contact's salutation (e.g. Mr., Ms., Dr.)"
+    },
+    "Name": {
+      "type": "string",
+      "description": "Full name of the contact"
+    },
+    "OtherStreet": {
+      "type": ["string", "null"]
+    },
+    "OtherCity": {
+      "type": ["string", "null"]
+    },
+    "OtherState": {
+      "type": ["string", "null"]
+    },
+    "OtherPostalCode": {
+      "type": ["string", "null"]
+    },
+    "OtherCountry": {
+      "type": ["string", "null"]
+    },
+    "OtherStateCode": {
+      "type": ["string", "null"]
+    },
+    "OtherCountryCode": {
+      "type": ["string", "null"]
+    },
+    "OtherLatitude": {
+      "type": ["number", "null"]
+    },
+    "OtherLongitude": {
+      "type": ["number", "null"]
+    },
+    "OtherGeocodeAccuracy": {
+      "type": ["string", "null"]
+    },
+    "OtherAddress": {
+      "type": ["object", "null"],
+      "properties": {
+        "city": { "type": ["string", "null"] },
+        "country": { "type": ["string", "null"] },
+        "countryCode": { "type": ["string", "null"] },
+        "geocodeAccuracy": { "type": ["string", "null"] },
+        "latitude": { "type": ["number", "null"] },
+        "longitude": { "type": ["number", "null"] },
+        "postalCode": { "type": ["string", "null"] },
+        "state": { "type": ["string", "null"] },
+        "stateCode": { "type": ["string", "null"] },
+        "street": { "type": ["string", "null"] }
+      }
+    },
+    "MailingStreet": {
+      "type": ["string", "null"],
+      "description": "Mailing street address"
+    },
+    "MailingCity": {
+      "type": ["string", "null"],
+      "description": "Mailing city"
+    },
+    "MailingState": {
+      "type": ["string", "null"],
+      "description": "Mailing state or province"
+    },
+    "MailingPostalCode": {
+      "type": ["string", "null"],
+      "description": "Mailing postal code"
+    },
+    "MailingCountry": {
+      "type": ["string", "null"],
+      "description": "Mailing country"
+    },
+    "MailingStateCode": {
+      "type": ["string", "null"]
+    },
+    "MailingCountryCode": {
+      "type": ["string", "null"]
+    },
+    "MailingLatitude": {
+      "type": ["number", "null"]
+    },
+    "MailingLongitude": {
+      "type": ["number", "null"]
+    },
+    "MailingGeocodeAccuracy": {
+      "type": ["string", "null"]
+    },
+    "MailingAddress": {
+      "type": ["object", "null"],
+      "description": "Structured mailing address object",
+      "properties": {
+        "city": { "type": ["string", "null"] },
+        "country": { "type": ["string", "null"] },
+        "countryCode": { "type": ["string", "null"] },
+        "geocodeAccuracy": { "type": ["string", "null"] },
+        "latitude": { "type": ["number", "null"] },
+        "longitude": { "type": ["number", "null"] },
+        "postalCode": { "type": ["string", "null"] },
+        "state": { "type": ["string", "null"] },
+        "stateCode": { "type": ["string", "null"] },
+        "street": { "type": ["string", "null"] }
+      }
+    },
+    "Phone": {
+      "type": ["string", "null"],
+      "description": "Contact's work phone number"
+    },
+    "Fax": {
+      "type": ["string", "null"]
+    },
+    "MobilePhone": {
+      "type": ["string", "null"],
+      "description": "Contact's mobile phone number"
+    },
+    "HomePhone": {
+      "type": ["string", "null"]
+    },
+    "OtherPhone": {
+      "type": ["string", "null"]
+    },
+    "AssistantPhone": {
+      "type": ["string", "null"]
+    },
+    "ReportsToId": {
+      "type": ["string", "null"]
+    },
+    "Email": {
+      "type": ["string", "null"],
+      "format": "email",
+      "description": "Contact's email address"
+    },
+    "Title": {
+      "type": ["string", "null"],
+      "description": "Contact's job title"
+    },
+    "Department": {
+      "type": ["string", "null"],
+      "description": "Contact's department"
+    },
+    "AssistantName": {
+      "type": ["string", "null"]
+    },
+    "LeadSource": {
+      "type": ["string", "null"]
+    },
+    "Birthdate": {
+      "type": ["string", "null"],
+      "format": "date",
+      "description": "Contact's birthdate in YYYY-MM-DD format"
+    },
+    "Description": {
+      "type": ["string", "null"]
+    },
+    "OwnerId": {
+      "type": "string"
+    },
+    "CreatedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "CreatedById": {
+      "type": "string"
+    },
+    "LastModifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "LastModifiedById": {
+      "type": "string"
+    },
+    "SystemModstamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "LastActivityDate": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "LastCURequestDate": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "LastCUUpdateDate": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "LastViewedDate": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "LastReferencedDate": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "EmailBouncedReason": {
+      "type": ["string", "null"]
+    },
+    "EmailBouncedDate": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "IsEmailBounced": {
+      "type": "boolean"
+    },
+    "PhotoUrl": {
+      "type": ["string", "null"]
+    },
+    "Jigsaw": {
+      "type": ["string", "null"]
+    },
+    "JigsawContactId": {
+      "type": ["string", "null"]
+    },
+    "CleanStatus": {
+      "type": ["string", "null"]
+    },
+    "IndividualId": {
+      "type": ["string", "null"]
+    },
+    "IsPriorityRecord": {
+      "type": "boolean"
+    },
+    "ContactSource": {
+      "type": ["string", "null"]
+    },
+    "Level__c": {
+      "type": ["string", "null"],
+      "description": "Custom field: contact level (e.g. Primary, Secondary)"
+    },
+    "Languages__c": {
+      "type": ["string", "null"],
+      "description": "Custom field: languages spoken"
+    }
+  }
+}
