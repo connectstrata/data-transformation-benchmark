@@ -1,0 +1,185 @@
+{
+  "type": "object",
+  "required": [
+    "data"
+  ],
+  "properties": {
+    "data": {
+      "type": "array",
+      "description": "Array containing data for all products attached to deals",
+      "items": {
+        "allOf": [
+          {
+            "type": "object",
+            "required": [
+              "id",
+              "sum",
+              "tax",
+              "deal_id",
+              "name",
+              "product_id",
+              "product_variation_id",
+              "order_nr",
+              "add_time",
+              "update_time",
+              "comments",
+              "currency",
+              "discount",
+              "discount_type",
+              "quantity",
+              "item_price",
+              "tax_method",
+              "is_enabled"
+            ],
+            "properties": {
+              "id": {
+                "type": "integer",
+                "description": "The ID of the deal-product"
+              },
+              "sum": {
+                "type": "number",
+                "description": "The sum of all the products attached to the deal"
+              },
+              "tax": {
+                "type": "number",
+                "description": "The product tax"
+              },
+              "deal_id": {
+                "type": "integer",
+                "description": "The ID of the deal"
+              },
+              "name": {
+                "type": "string",
+                "description": "The product name"
+              },
+              "product_id": {
+                "type": "integer",
+                "description": "The ID of the product"
+              },
+              "product_variation_id": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "description": "The ID of the product variation"
+              },
+              "order_nr": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "description": "The order number of the product within the deal"
+              },
+              "add_time": {
+                "type": "string",
+                "description": "The date and time when the product was added to the deal"
+              },
+              "update_time": {
+                "type": "string",
+                "description": "The date and time when the deal product was last updated"
+              },
+              "comments": {
+                "type": "string",
+                "description": "The comments of the product"
+              },
+              "currency": {
+                "type": "string",
+                "description": "The currency associated with the deal product"
+              },
+              "discount": {
+                "type": "number",
+                "default": 0,
+                "description": "The value of the discount"
+              },
+              "discount_type": {
+                "type": "string",
+                "enum": [
+                  "percentage",
+                  "amount"
+                ],
+                "default": "percentage",
+                "description": "The type of the discount value"
+              },
+              "quantity": {
+                "type": "integer",
+                "description": "The quantity of the product"
+              },
+              "item_price": {
+                "type": "number",
+                "description": "The price value of the product"
+              },
+              "tax_method": {
+                "type": "string",
+                "enum": [
+                  "exclusive",
+                  "inclusive",
+                  "none"
+                ],
+                "description": "The tax option to be applied"
+              },
+              "is_enabled": {
+                "type": "boolean",
+                "default": true,
+                "description": "Whether this product is enabled for the deal"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "billing_frequency"
+            ],
+            "properties": {
+              "billing_frequency": {
+                "type": "string",
+                "default": "one-time",
+                "enum": [
+                  "one-time",
+                  "annually",
+                  "semi-annually",
+                  "quarterly",
+                  "monthly",
+                  "weekly"
+                ],
+                "description": "How often a customer is billed"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "billing_frequency_cycles"
+            ],
+            "properties": {
+              "billing_frequency_cycles": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "default": null,
+                "description": "The number of times the billing frequency repeats"
+              }
+            }
+          },
+          {
+            "type": "object",
+            "required": [
+              "billing_start_date"
+            ],
+            "properties": {
+              "billing_start_date": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date",
+                "default": null,
+                "description": "The billing start date"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

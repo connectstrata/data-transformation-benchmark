@@ -1,0 +1,243 @@
+{
+  "required": [
+    "data"
+  ],
+  "type": "object",
+  "properties": {
+    "data": {
+      "required": [
+        "attributes",
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "attributes": {
+          "required": [
+            "metric",
+            "profile",
+            "properties",
+            "time"
+          ],
+          "type": "object",
+          "properties": {
+            "properties": {
+              "type": "object",
+              "required": [
+                "campaign_name",
+                "coupon_code",
+                "discount_amount",
+                "coupon_type",
+                "redeemed_menu_items"
+              ],
+              "properties": {
+                "campaign_name": {
+                  "type": "string"
+                },
+                "coupon_code": {
+                  "type": "string"
+                },
+                "discount_amount": {
+                  "type": "number"
+                },
+                "coupon_type": {
+                  "type": "string"
+                },
+                "redeemed_menu_items": {
+                  "type": "array",
+                  "contains": {
+                    "type": "object",
+                    "required": [
+                      "item_name",
+                      "item_amount"
+                    ],
+                    "properties": {
+                      "item_name": {
+                        "type": "string"
+                      },
+                      "item_amount": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "time": {
+              "type": "string",
+              "description": "When this event occurred. Expects ISO 8601 format.",
+              "format": "date-time",
+              "nullable": true,
+              "pattern": "2022-03-02"
+            },
+            "value": {
+              "type": "number",
+              "nullable": true
+            },
+            "value_currency": {
+              "type": "string",
+              "nullable": true
+            },
+            "unique_id": {
+              "type": "string",
+              "nullable": true
+            },
+            "metric": {
+              "required": [
+                "data"
+              ],
+              "type": "object",
+              "properties": {
+                "data": {
+                  "required": [
+                    "attributes",
+                    "type"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "attributes": {
+                      "required": [
+                        "name"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "service": {
+                          "type": "string",
+                          "nullable": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "profile": {
+              "required": [
+                "data"
+              ],
+              "type": "object",
+              "properties": {
+                "data": {
+                  "required": [
+                    "attributes",
+                    "type"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "attributes": {
+                      "type": "object",
+                      "required": [
+                        "email"
+                      ],
+                      "properties": {
+                        "email": {
+                          "type": "string"
+                        },
+                        "phone_number": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "external_id": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "anonymous_id": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "_kx": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "first_name": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "last_name": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "organization": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "locale": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "title": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "image": {
+                          "type": "string",
+                          "nullable": true
+                        },
+                        "location": {
+                          "type": "object",
+                          "properties": {
+                            "address1": {
+                              "type": "string",
+                              "nullable": true
+                            },
+                            "address2": {
+                              "type": "string",
+                              "nullable": true
+                            },
+                            "city": {
+                              "type": "string",
+                              "nullable": true
+                            },
+                            "country": {
+                              "type": "string",
+                              "nullable": true
+                            },
+                            "region": {
+                              "type": "string",
+                              "nullable": true
+                            },
+                            "zip": {
+                              "type": "string",
+                              "nullable": true
+                            },
+                            "timezone": {
+                              "type": "string",
+                              "nullable": true
+                            },
+                            "ip": {
+                              "type": "string",
+                              "nullable": true
+                            }
+                          }
+                        },
+                        "properties": {
+                          "type": "object",
+                          "nullable": true
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

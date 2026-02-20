@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "required": [
+    "eventName",
+    "userId",
+    "createdAt",
+    "dataFields"
+  ],
+  "properties": {
+    "eventName": {
+      "type": "string",
+      "const": "hubspot_contact_created"
+    },
+    "userId": {
+      "type": "string",
+      "const": "326451258070"
+    },
+    "createdAt": {
+      "type": "integer",
+      "const": 1763416678
+    },
+    "dataFields": {
+      "type": "object",
+      "required": [
+        "portal_id",
+        "subscription_type"
+      ],
+      "properties": {
+        "portal_id": {
+          "type": "integer",
+          "const": 243123986
+        },
+        "subscription_type": {
+          "type": "string",
+          "const": "object.creation"
+        }
+      }
+    },
+    "email": {
+      "type": "string"
+    }
+  }
+}

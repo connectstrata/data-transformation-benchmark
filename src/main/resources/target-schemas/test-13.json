@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "required": [
+    "email",
+    "dataFields"
+  ],
+  "properties": {
+    "email": {
+      "description": "An email address that identifies a user profile in Iterable. Provide an <code>email</code> or a <code>userId</code> (but not both), depending on <a href=\"https://support.iterable.com/hc/articles/29156459027348\">how your project identifies users</a>.",
+      "type": "string"
+    },
+    "userId": {
+      "description": "A user ID that identifies a user profile in Iterable. Provide an <code>email</code> or a <code>userId</code> (but not both), depending on <a href=\"https://support.iterable.com/hc/articles/29156459027348\">how your project identifies users</a>.",
+      "type": "string"
+    },
+    "dataFields": {
+      "description": "Additional data associated with event (i.e. item amount, item quantity). For events of the same name, identically named data fields must be of the same type.",
+      "type": "object",
+      "required": [
+        "full_name",
+        "phoneNumber",
+        "favorite_restaurants",
+        "profile_updated_at",
+        "source_system"
+      ],
+      "properties": {
+        "full_name": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "pattern": "^\\+1"
+        },
+        "favorite_restaurants": {
+          "type": "array",
+          "allOf": [
+            {
+              "contains": {
+                "type": "string"
+              }
+            },
+            {
+              "contains": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "profile_updated_at": {
+          "description": "when the profile was last updated. Expects a unix timestamp.",
+          "type": "number"
+        },
+        "source_system": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

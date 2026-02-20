@@ -1,0 +1,73 @@
+{
+  "required": [
+    "eventName",
+    "email",
+    "createdAt",
+    "dataFields"
+  ],
+  "type": "object",
+  "properties": {
+    "campaignId": {
+      "type": "integer",
+      "description": "Campaign tied to conversion",
+      "format": "int64"
+    },
+    "createNewFields": {
+      "type": "boolean",
+      "description": "Whether new fields should be ingested and added to the schema."
+    },
+    "createdAt": {
+      "type": "integer",
+      "description": "Time event happened. Set to the time event was received if unspecified. Expects a unix timestamp.",
+      "format": "int64",
+      "const": 1646216621
+    },
+    "dataFields": {
+      "type": "object",
+      "description": "Additional data associated with event.",
+      "required": [
+        "campaign_name",
+        "coupon_campaign_id",
+        "applicable_flat_discount"
+      ],
+      "properties": {
+        "campaign_name": {
+          "type": "string",
+          "const": "Dynamic Coupon - $2.5 OFF"
+        },
+        "coupon_campaign_id": {
+          "type": "string",
+          "const": "58293"
+        },
+        "applicable_flat_discount": {
+          "type": "number",
+          "const": 2.5
+        }
+      }
+    },
+    "email": {
+      "type": "string",
+      "description": "An email address that identifies a user profile in Iterable.",
+      "format": "email",
+      "const": "test@example.com"
+    },
+    "eventName": {
+      "type": "string",
+      "description": "Name of event",
+      "const": "Coupon Issuance - Discount"
+    },
+    "id": {
+      "type": "string",
+      "description": "Optional event id."
+    },
+    "templateId": {
+      "type": "integer",
+      "description": "Template id",
+      "format": "int64"
+    },
+    "userId": {
+      "type": "string",
+      "description": "A user ID that identifies a user profile in Iterable."
+    }
+  }
+}

@@ -1,0 +1,248 @@
+{
+  "data": {
+    "items": [
+      {
+        "result_score": 0.98,
+        "item": {
+          "id": 4701,
+          "type": "deal",
+          "title": "30 Day Pilot",
+          "value": 10000,
+          "currency": "USD",
+          "status": "open",
+          "visible_to": 7,
+          "owner": {
+            "id": 2001
+          },
+          "stage": {
+            "id": 4,
+            "name": "Proposal/Price Quote"
+          },
+          "person": {
+            "id": 9001,
+            "name": "Rose Gonzalez"
+          },
+          "organization": {
+            "id": 5001,
+            "name": "Dunder Mifflin"
+          },
+          "custom_fields": {
+            "4e9b7f1d3c8a2b6e5d1f9a3c7b2e8d4f6a1c3b5d": "rose@edge.com",
+            "9a1c4e7b2d6f3a8c5e1b9d4f2a7c3e6b8d1f5a2c": "(512) 757-6000",
+            "2d8f5b1c7a3e9d4f6b2c8a1e5d7f3b9c4a6e2d1f": "(512) 757-9340",
+            "7c3a1e9d5b2f8a4c6d1e7b3f9a2c5d8e4f1b6a3d": "1973-03-22",
+            "1f6b3d9a4c7e2f8a5d1c6b3e9f4a2d7c8e5b1f3a": "SVP, Procurement|313 Constitution Place|Austin|Texas|78767|USA",
+            "d4de1c1518b4531717c676029a45911c340390a6": {
+              "value": 2300,
+              "currency": "EUR"
+            },
+            "53c2f18db6a1655d6af8bba77d9679565f975fd8": {
+              "route": "Constitution Place",
+              "value": "313 Constitution Place, Austin, Texas, USA",
+              "country": "USA",
+              "locality": "Austin",
+              "postal_code": "78767",
+              "street_number": "313",
+              "admin_area_level_1": "Texas",
+              "admin_area_level_2": "Travis County",
+              "formatted_address": "313 Constitution Place, Austin, TX 78767, USA"
+            },
+            "a1f0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2": 123,
+            "b1f0a9e8d7c6b5a4f3e2d1c0b9a8e7d6c5b4a3f2": [123, 456],
+            "c1f0a9e8d7c6b5a4f3e2d1c0b9a8e7d6c5b4a3f2": {
+              "value": "09:00:00",
+              "until": "11:00:00",
+              "timezone_name": "America/Chicago"
+            }
+          },
+          "notes": [
+            "Primary stakeholder from procurement",
+            "Needs rollout plan before legal review"
+          ],
+          "is_archived": false
+        }
+      },
+      {
+        "result_score": 0.92,
+        "item": {
+          "id": 4702,
+          "type": "deal",
+          "title": "SaaS Subscription",
+          "value": 20000,
+          "currency": "USD",
+          "status": "open",
+          "visible_to": 7,
+          "owner": {
+            "id": 2001
+          },
+          "stage": {
+            "id": 4,
+            "name": "Proposal/Price Quote"
+          },
+          "person": {
+            "id": 9001,
+            "name": "Rose Gonzalez"
+          },
+          "organization": {
+            "id": 5001,
+            "name": "Dunder Mifflin"
+          },
+          "custom_fields": {
+            "4e9b7f1d3c8a2b6e5d1f9a3c7b2e8d4f6a1c3b5d": "rose@edge.com",
+            "9a1c4e7b2d6f3a8c5e1b9d4f2a7c3e6b8d1f5a2c": "(512) 757-6000",
+            "2d8f5b1c7a3e9d4f6b2c8a1e5d7f3b9c4a6e2d1f": "(512) 757-9340",
+            "7c3a1e9d5b2f8a4c6d1e7b3f9a2c5d8e4f1b6a3d": "1973-03-22",
+            "1f6b3d9a4c7e2f8a5d1c6b3e9f4a2d7c8e5b1f3a": "SVP, Procurement|313 Constitution Place|Austin|Texas|78767|USA",
+            "d4de1c1518b4531717c676029a45911c340390a6": {
+              "value": 3900,
+              "currency": "USD"
+            },
+            "53c2f18db6a1655d6af8bba77d9679565f975fd8": {
+              "route": "Constitution Place",
+              "value": "313 Constitution Place, Austin, Texas, USA",
+              "country": "USA",
+              "locality": "Austin",
+              "postal_code": "78767",
+              "street_number": "313",
+              "admin_area_level_1": "Texas",
+              "admin_area_level_2": "Travis County",
+              "formatted_address": "313 Constitution Place, Austin, TX 78767, USA"
+            },
+            "a1f0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2": 123,
+            "b1f0a9e8d7c6b5a4f3e2d1c0b9a8e7d6c5b4a3f2": [123, 456],
+            "c1f0a9e8d7c6b5a4f3e2d1c0b9a8e7d6c5b4a3f2": {
+              "value": "09:00:00",
+              "until": "11:00:00",
+              "timezone_name": "America/Chicago"
+            }
+          },
+          "notes": [
+            "Wants annual invoicing",
+            "Interested in expanded support"
+          ],
+          "is_archived": false
+        }
+      },
+      {
+        "result_score": 0.88,
+        "item": {
+          "id": 4703,
+          "type": "deal",
+          "title": "Legacy Expansion",
+          "value": 15000,
+          "currency": "USD",
+          "status": "won",
+          "visible_to": 7,
+          "owner": {
+            "id": 2002
+          },
+          "stage": {
+            "id": 7,
+            "name": "Won"
+          },
+          "person": {
+            "id": 9010,
+            "name": "Alex Pineda"
+          },
+          "organization": {
+            "id": 5009,
+            "name": "Northwind Labs"
+          },
+          "custom_fields": {
+            "4e9b7f1d3c8a2b6e5d1f9a3c7b2e8d4f6a1c3b5d": "alex@northwind.com",
+            "9a1c4e7b2d6f3a8c5e1b9d4f2a7c3e6b8d1f5a2c": "(303) 555-0101",
+            "2d8f5b1c7a3e9d4f6b2c8a1e5d7f3b9c4a6e2d1f": "(303) 555-0199",
+            "7c3a1e9d5b2f8a4c6d1e7b3f9a2c5d8e4f1b6a3d": "1985-09-14",
+            "1f6b3d9a4c7e2f8a5d1c6b3e9f4a2d7c8e5b1f3a": "Director|42 Evergreen Terrace|Denver|Colorado|80203|USA",
+            "d4de1c1518b4531717c676029a45911c340390a6": {
+              "value": 1250,
+              "currency": "USD"
+            },
+            "53c2f18db6a1655d6af8bba77d9679565f975fd8": {
+              "route": "Evergreen Terrace",
+              "value": "42 Evergreen Terrace, Denver, Colorado, USA",
+              "country": "USA",
+              "locality": "Denver",
+              "postal_code": "80203",
+              "street_number": "42",
+              "admin_area_level_1": "Colorado",
+              "admin_area_level_2": "Denver County",
+              "formatted_address": "42 Evergreen Terrace, Denver, CO 80203, USA"
+            },
+            "a1f0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2": 456,
+            "b1f0a9e8d7c6b5a4f3e2d1c0b9a8e7d6c5b4a3f2": [456, 789],
+            "c1f0a9e8d7c6b5a4f3e2d1c0b9a8e7d6c5b4a3f2": {
+              "value": "13:30:00",
+              "until": "14:00:00",
+              "timezone_name": "America/Denver"
+            }
+          },
+          "notes": [
+            "Closed last quarter"
+          ],
+          "is_archived": false
+        }
+      },
+      {
+        "result_score": 0.81,
+        "item": {
+          "id": 4704,
+          "type": "deal",
+          "title": "Archived Renewal",
+          "value": 9000,
+          "currency": "USD",
+          "status": "open",
+          "visible_to": 7,
+          "owner": {
+            "id": 2003
+          },
+          "stage": {
+            "id": 3,
+            "name": "Qualified"
+          },
+          "person": {
+            "id": 9011,
+            "name": "Jordan Kim"
+          },
+          "organization": {
+            "id": 5010,
+            "name": "Fabrikam"
+          },
+          "custom_fields": {
+            "4e9b7f1d3c8a2b6e5d1f9a3c7b2e8d4f6a1c3b5d": "jordan@fabrikam.com",
+            "9a1c4e7b2d6f3a8c5e1b9d4f2a7c3e6b8d1f5a2c": "(206) 555-0120",
+            "2d8f5b1c7a3e9d4f6b2c8a1e5d7f3b9c4a6e2d1f": "(206) 555-0145",
+            "7c3a1e9d5b2f8a4c6d1e7b3f9a2c5d8e4f1b6a3d": "1990-12-03",
+            "1f6b3d9a4c7e2f8a5d1c6b3e9f4a2d7c8e5b1f3a": "Manager|77 Pine Street|Seattle|Washington|98101|USA",
+            "d4de1c1518b4531717c676029a45911c340390a6": {
+              "value": 800,
+              "currency": "USD"
+            },
+            "53c2f18db6a1655d6af8bba77d9679565f975fd8": {
+              "route": "Pine Street",
+              "value": "77 Pine Street, Seattle, Washington, USA",
+              "country": "USA",
+              "locality": "Seattle",
+              "postal_code": "98101",
+              "street_number": "77",
+              "admin_area_level_1": "Washington",
+              "admin_area_level_2": "King County",
+              "formatted_address": "77 Pine Street, Seattle, WA 98101, USA"
+            },
+            "a1f0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2": 789,
+            "b1f0a9e8d7c6b5a4f3e2d1c0b9a8e7d6c5b4a3f2": [789, 101],
+            "c1f0a9e8d7c6b5a4f3e2d1c0b9a8e7d6c5b4a3f2": {
+              "value": "16:00:00",
+              "until": "18:00:00",
+              "timezone_name": "America/Los_Angeles"
+            }
+          },
+          "notes": [
+            "Deal is archived and should be ignored"
+          ],
+          "is_archived": true
+        }
+      }
+    ]
+  }
+}

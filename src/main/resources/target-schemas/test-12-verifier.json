@@ -1,0 +1,152 @@
+{
+  "type": "object",
+  "required": [
+    "data"
+  ],
+  "properties": {
+    "data": {
+      "type": "object",
+      "required": [
+        "type",
+        "attributes"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "event"
+        },
+        "attributes": {
+          "type": "object",
+          "required": [
+            "metric",
+            "profile",
+            "properties",
+            "time"
+          ],
+          "properties": {
+            "time": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "2021-12-31"
+            },
+            "metric": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "required": [
+                    "type",
+                    "attributes"
+                  ],
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "const": "metric"
+                    },
+                    "attributes": {
+                      "type": "object",
+                      "required": [
+                        "name"
+                      ],
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "const": "order_fulfilled"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "profile": {
+              "type": "object",
+              "required": [
+                "data"
+              ],
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "required": [
+                    "type",
+                    "attributes"
+                  ],
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "const": "profile"
+                    },
+                    "attributes": {
+                      "type": "object",
+                      "required": [
+                        "email"
+                      ],
+                      "properties": {
+                        "email": {
+                          "type": "string",
+                          "const": "jon@example.com"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "properties": {
+              "type": "object",
+              "required": [
+                "order_id",
+                "currency",
+                "total_price",
+                "line_items"
+              ],
+              "properties": {
+                "order_id": {
+                  "type": "integer",
+                  "const": 82098291194618
+                },
+                "currency": {
+                  "type": "string",
+                  "const": "USD"
+                },
+                "total_price": {
+                  "type": "number",
+                  "const": 359.97
+                },
+                "line_items": {
+                  "type": "array",
+                  "minItems": 3,
+                  "contains": {
+                    "type": "object",
+                    "required": [
+                      "item_name",
+                      "item_price",
+                      "quantity"
+                    ],
+                    "properties": {
+                      "item_name": {
+                        "type": "string",
+                        "const": "Aviator sunglasses"
+                      },
+                      "item_price": {
+                        "type": "number",
+                        "const": 89.99
+                      },
+                      "quantity": {
+                        "type": "integer",
+                        "const": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

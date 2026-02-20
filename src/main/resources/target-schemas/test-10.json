@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "required": [
+    "email",
+    "dataFields"
+  ],
+  "properties": {
+    "createNewFields": {
+      "type": "boolean",
+      "description": "Whether new fields should be ingested and added to the schema."
+    },
+    "dataFields": {
+      "type": "object",
+      "description": "Data to store on the user profile.",
+      "required": [
+        "full_name",
+        "phoneNumber",
+        "favorite_restaurants",
+        "profile_updated_at"
+      ],
+      "properties": {
+        "full_name": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "pattern": "^\\+1"
+        },
+        "favorite_restaurants": {
+          "type": "array",
+          "allOf": [
+            {
+              "contains": {
+                "type": "string"
+              }
+            },
+            {
+              "contains": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "profile_updated_at": {
+          "type": "number",
+          "description": "Unix timestamp in seconds (epoch seconds)"
+        }
+      }
+    },
+    "email": {
+      "type": "string",
+      "description": "An email address that identifies a user profile in Iterable."
+    },
+    "mergeNestedObjects": {
+      "type": "boolean",
+      "description": "Merge top-level objects instead of overwriting them."
+    },
+    "preferUserId": {
+      "type": "boolean",
+      "description": "Whether or not a new user should be created if the request includes a userId that doesn't yet exist."
+    },
+    "userId": {
+      "type": "string",
+      "description": "A user ID that identifies a user profile in Iterable."
+    }
+  }
+}

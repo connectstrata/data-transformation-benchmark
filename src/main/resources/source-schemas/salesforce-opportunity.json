@@ -1,0 +1,169 @@
+{
+  "type": "object",
+  "description": "Salesforce Opportunity record (single item; Source.scala wraps in an array)",
+  "properties": {
+    "Id": {
+      "type": "string",
+      "description": "Salesforce record ID"
+    },
+    "IsDeleted": {
+      "type": "boolean"
+    },
+    "AccountId": {
+      "type": ["string", "null"],
+      "description": "ID of the associated Account"
+    },
+    "IsPrivate": {
+      "type": "boolean"
+    },
+    "Name": {
+      "type": "string",
+      "description": "Opportunity name"
+    },
+    "Description": {
+      "type": ["string", "null"]
+    },
+    "StageName": {
+      "type": "string",
+      "description": "Current stage of the opportunity (e.g. Prospecting, Proposal/Price Quote, Closed Won)"
+    },
+    "Amount": {
+      "type": ["number", "null"],
+      "description": "Total amount of the opportunity"
+    },
+    "Probability": {
+      "type": ["number", "null"],
+      "description": "Probability of closing the opportunity (0-100)"
+    },
+    "ExpectedRevenue": {
+      "type": ["number", "null"]
+    },
+    "TotalOpportunityQuantity": {
+      "type": ["number", "null"]
+    },
+    "CloseDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Expected close date in YYYY-MM-DD format"
+    },
+    "Type": {
+      "type": ["string", "null"]
+    },
+    "NextStep": {
+      "type": ["string", "null"]
+    },
+    "LeadSource": {
+      "type": ["string", "null"]
+    },
+    "IsClosed": {
+      "type": "boolean",
+      "description": "Whether the opportunity is closed"
+    },
+    "IsWon": {
+      "type": "boolean",
+      "description": "Whether the opportunity was won"
+    },
+    "ForecastCategory": {
+      "type": "string",
+      "description": "Forecast category"
+    },
+    "ForecastCategoryName": {
+      "type": "string",
+      "description": "Forecast category display name"
+    },
+    "CampaignId": {
+      "type": ["string", "null"]
+    },
+    "HasOpportunityLineItem": {
+      "type": "boolean"
+    },
+    "Pricebook2Id": {
+      "type": ["string", "null"]
+    },
+    "OwnerId": {
+      "type": "string"
+    },
+    "CreatedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "CreatedById": {
+      "type": "string"
+    },
+    "LastModifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "LastModifiedById": {
+      "type": "string"
+    },
+    "SystemModstamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "LastActivityDate": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "PushCount": {
+      "type": "integer"
+    },
+    "LastStageChangeDate": {
+      "type": ["string", "null"],
+      "format": "date"
+    },
+    "FiscalQuarter": {
+      "type": "integer"
+    },
+    "FiscalYear": {
+      "type": "integer"
+    },
+    "Fiscal": {
+      "type": "string",
+      "description": "Fiscal period (e.g. 2025 4)"
+    },
+    "ContactId": {
+      "type": ["string", "null"]
+    },
+    "LastViewedDate": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "LastReferencedDate": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "HasOpenActivity": {
+      "type": "boolean"
+    },
+    "HasOverdueTask": {
+      "type": "boolean"
+    },
+    "LastAmountChangedHistoryId": {
+      "type": ["string", "null"]
+    },
+    "LastCloseDateChangedHistoryId": {
+      "type": ["string", "null"]
+    },
+    "DeliveryInstallationStatus__c": {
+      "type": ["string", "null"],
+      "description": "Custom field: delivery/installation status"
+    },
+    "TrackingNumber__c": {
+      "type": ["string", "null"],
+      "description": "Custom field: tracking number"
+    },
+    "OrderNumber__c": {
+      "type": ["string", "null"],
+      "description": "Custom field: order number"
+    },
+    "CurrentGenerators__c": {
+      "type": ["string", "null"],
+      "description": "Custom field: current generators"
+    },
+    "MainCompetitors__c": {
+      "type": ["string", "null"],
+      "description": "Custom field: main competitors"
+    }
+  }
+}

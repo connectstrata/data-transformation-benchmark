@@ -1,0 +1,159 @@
+{
+  "type": "object",
+  "required": [
+    "first_name",
+    "last_name",
+    "company_name",
+    "create_source",
+    "notes"
+  ],
+  "properties": {
+    "first_name": {
+      "type": "string",
+      "maxLength": 50,
+      "const": "Rose"
+    },
+    "last_name": {
+      "type": "string",
+      "maxLength": 50,
+      "const": "Gonzalez"
+    },
+    "company_name": {
+      "type": "string",
+      "maxLength": 50,
+      "const": "Dunder Mifflin"
+    },
+    "create_source": {
+      "type": "string",
+      "const": "Account"
+    },
+    "notes": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "allOf": [
+        {
+          "contains": {
+            "type": "object",
+            "required": [
+              "content",
+              "probability_bucket",
+              "product_total",
+              "discount_total",
+              "net_total"
+            ],
+            "properties": {
+              "content": {
+                "type": "string",
+                "allOf": [
+                  {
+                    "pattern": "30 Day Pilot"
+                  },
+                  {
+                    "pattern": "Proposal/Price Quote"
+                  },
+                  {
+                    "pattern": "open"
+                  }
+                ]
+              },
+              "probability_bucket": {
+                "type": "string",
+                "const": "hot"
+              },
+              "product_total": {
+                "type": "number",
+                "const": 8400
+              },
+              "discount_total": {
+                "type": "number",
+                "const": 1250
+              },
+              "net_total": {
+                "type": "number",
+                "const": 7150
+              }
+            }
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "required": [
+              "content",
+              "probability_bucket",
+              "product_total",
+              "discount_total",
+              "net_total"
+            ],
+            "properties": {
+              "content": {
+                "type": "string",
+                "allOf": [
+                  {
+                    "pattern": "SaaS Subscription"
+                  },
+                  {
+                    "pattern": "Proposal/Price Quote"
+                  },
+                  {
+                    "pattern": "open"
+                  }
+                ]
+              },
+              "probability_bucket": {
+                "type": "string",
+                "const": "warm"
+              },
+              "product_total": {
+                "type": "number",
+                "const": 15000
+              },
+              "discount_total": {
+                "type": "number",
+                "const": 1000
+              },
+              "net_total": {
+                "type": "number",
+                "const": 14000
+              }
+            }
+          }
+        }
+      ],
+      "items": {
+        "type": "object",
+        "required": [
+          "content",
+          "probability_bucket",
+          "product_total",
+          "discount_total",
+          "net_total"
+        ],
+        "properties": {
+          "content": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "probability_bucket": {
+            "type": "string",
+            "enum": [
+              "cold",
+              "warm",
+              "hot"
+            ]
+          },
+          "product_total": {
+            "type": "number"
+          },
+          "discount_total": {
+            "type": "number"
+          },
+          "net_total": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

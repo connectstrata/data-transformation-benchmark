@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "required": [
+    "email_address",
+    "first_name",
+    "last_name",
+    "job_title",
+    "create_source"
+  ],
+  "properties": {
+    "email_address": {
+      "type": "object",
+      "required": [
+        "address",
+        "permission_to_send"
+      ],
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "permission_to_send": {
+          "type": "string"
+        }
+      }
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "job_title": {
+      "type": "string"
+    },
+    "create_source": {
+      "type": "string",
+      "enum": [
+        "Contact",
+        "Account"
+      ]
+    }
+  }
+}

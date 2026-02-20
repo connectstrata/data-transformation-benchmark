@@ -1,0 +1,116 @@
+{
+  "title": "Add List Members",
+  "required": [
+    "email_address",
+    "status",
+    "merge_fields"
+  ],
+  "type": "object",
+  "properties": {
+    "email_address": {
+      "title": "Email Address",
+      "type": "string",
+      "description": "Email address for a subscriber."
+    },
+    "email_type": {
+      "title": "Email Type",
+      "type": "string",
+      "description": "Type of email this member asked to get ('html' or 'text')."
+    },
+    "status": {
+      "title": "Status",
+      "type": "string",
+      "description": "Subscriber's current status.",
+      "enum": [
+        "subscribed",
+        "unsubscribed",
+        "cleaned",
+        "pending",
+        "transactional"
+      ]
+    },
+    "merge_fields": {
+      "title": "Merge Fields",
+      "type": "object",
+      "required": [
+        "FNAME",
+        "LNAME"
+      ],
+      "properties": {
+        "FNAME": {
+          "type": "string"
+        },
+        "LNAME": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "A dictionary of merge fields where the keys are the merge tags."
+    },
+    "interests": {
+      "title": "Subscriber Interests",
+      "type": "object",
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "language": {
+      "title": "Language",
+      "type": "string"
+    },
+    "vip": {
+      "title": "VIP",
+      "type": "boolean"
+    },
+    "location": {
+      "title": "Location",
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        }
+      }
+    },
+    "marketing_permissions": {
+      "title": "Marketing Permissions",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "marketing_permission_id": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "ip_signup": {
+      "type": "string"
+    },
+    "timestamp_signup": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ip_opt": {
+      "type": "string"
+    },
+    "timestamp_opt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "description": "Individuals who are currently or have been previously subscribed to this list, including members who have bounced or unsubscribed."
+}

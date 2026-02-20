@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "description": "HubSpot contact created webhook event",
+  "properties": {
+    "appId": {
+      "type": "integer",
+      "description": "The ID of the HubSpot application that triggered the webhook"
+    },
+    "objectId": {
+      "type": "string",
+      "description": "The ID of the object that was created"
+    },
+    "eventId": {
+      "type": "integer",
+      "description": "A unique identifier for this event"
+    },
+    "portalId": {
+      "type": "integer",
+      "description": "The HubSpot portal (account) ID"
+    },
+    "sourceId": {
+      "type": "string",
+      "description": "Identifies the source of the change (e.g. userId:12345)"
+    },
+    "changeFlag": {
+      "type": "string",
+      "description": "The type of change (e.g. CREATED, UPDATED, DELETED)"
+    },
+    "occurredAt": {
+      "type": "integer",
+      "description": "Unix timestamp in milliseconds when the event occurred"
+    },
+    "changeSource": {
+      "type": "string",
+      "description": "The source of the change (e.g. CRM_UI, API, IMPORT)"
+    },
+    "objectTypeId": {
+      "type": "string",
+      "description": "The type ID of the object (e.g. 0-1 for contacts)"
+    },
+    "attemptNumber": {
+      "type": "integer",
+      "description": "The number of times HubSpot has attempted to deliver this webhook"
+    },
+    "subscriptionId": {
+      "type": "integer",
+      "description": "The ID of the webhook subscription"
+    },
+    "subscriptionType": {
+      "type": "string",
+      "description": "The type of subscription (e.g. object.creation, object.propertyChange)"
+    }
+  }
+}

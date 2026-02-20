@@ -1,0 +1,324 @@
+{
+  "type": "object",
+  "description": "Punchh coupon issuance webhook event",
+  "properties": {
+    "content_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "integer",
+      "description": "Unix timestamp of the event in seconds"
+    },
+    "business_id": {
+      "type": "integer"
+    },
+    "business_uuid": {
+      "type": "string"
+    },
+    "business_slug": {
+      "type": "string"
+    },
+    "event_name": {
+      "type": "string",
+      "description": "The event category name"
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string",
+      "description": "The action performed (e.g. create, update)"
+    },
+    "payload": {
+      "type": "object",
+      "description": "The coupon issuance payload",
+      "properties": {
+        "app_device_id": {
+          "type": ["string", "null"]
+        },
+        "applicable_flat_discount": {
+          "type": "number",
+          "description": "Flat discount amount applied"
+        },
+        "applicable_percentage_discount": {
+          "type": "number",
+          "description": "Percentage discount applied"
+        },
+        "bar_code": {
+          "type": ["string", "null"]
+        },
+        "campaign_name": {
+          "type": "string",
+          "description": "Name of the coupon campaign"
+        },
+        "code": {
+          "type": "string",
+          "description": "Unique coupon code"
+        },
+        "coupon_campaign_id": {
+          "type": "integer",
+          "description": "Coupon campaign identifier"
+        },
+        "coupon_id": {
+          "type": "string",
+          "description": "Unique coupon identifier"
+        },
+        "coupon_type": {
+          "type": "string",
+          "description": "Type of coupon (e.g. discount, freebie)"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp when the coupon was created"
+        },
+        "discount": {
+          "type": ["number", "null"]
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Email address of the user"
+        },
+        "employee_id": {
+          "type": ["string", "null"]
+        },
+        "expiry_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp when the coupon expires"
+        },
+        "gift_count": {
+          "type": ["integer", "null"]
+        },
+        "location_id": {
+          "type": ["integer", "null"]
+        },
+        "processed_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "receipt_amount": {
+          "type": ["number", "null"]
+        },
+        "receipt_datetime": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "receipt_subtotal_amount": {
+          "type": ["number", "null"]
+        },
+        "redeemable": {
+          "type": ["boolean", "null"]
+        },
+        "redeemed_menu_items": {
+          "type": "array",
+          "description": "List of menu items redeemed with this coupon",
+          "items": {
+            "type": "object",
+            "properties": {
+              "item_amount": {
+                "type": "number",
+                "description": "Price of the menu item"
+              },
+              "item_name": {
+                "type": "string",
+                "description": "Name of the menu item"
+              },
+              "item_qty": {
+                "type": "integer",
+                "description": "Quantity of the menu item"
+              },
+              "menu_family": {
+                "type": "string"
+              },
+              "menu_item_id": {
+                "type": "string"
+              },
+              "menu_item_type": {
+                "type": "string"
+              },
+              "menu_major_group": {
+                "type": "string"
+              },
+              "serial_number": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "revenue_code": {
+          "type": ["string", "null"]
+        },
+        "revenue_id": {
+          "type": ["string", "null"]
+        },
+        "status": {
+          "type": "string",
+          "description": "Current status of the coupon (e.g. issued, redeemed)"
+        },
+        "transaction_no": {
+          "type": ["string", "null"]
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp when the coupon was last updated"
+        },
+        "user": {
+          "type": "object",
+          "description": "The user associated with this coupon",
+          "properties": {
+            "account_balance": {
+              "type": "object",
+              "description": "User's loyalty account balance details",
+              "properties": {
+                "banked_currency": {
+                  "type": "number"
+                },
+                "current_membership_level_name": {
+                  "type": "string",
+                  "description": "Current loyalty membership level"
+                },
+                "last_visit": {
+                  "type": ["string", "null"],
+                  "format": "date-time"
+                },
+                "loyalty_points": {
+                  "type": ["integer", "null"]
+                },
+                "net_balance": {
+                  "type": "number"
+                },
+                "net_debits": {
+                  "type": "number"
+                },
+                "pending_points": {
+                  "type": ["integer", "null"]
+                },
+                "total_credits": {
+                  "type": ["number", "null"]
+                },
+                "total_debits": {
+                  "type": ["number", "null"]
+                },
+                "total_lifetime_points": {
+                  "type": "integer",
+                  "description": "Total loyalty points earned over the lifetime of the account"
+                },
+                "total_point_credits": {
+                  "type": "integer"
+                },
+                "total_redeemable_visits": {
+                  "type": ["integer", "null"]
+                },
+                "total_visits": {
+                  "type": ["integer", "null"]
+                },
+                "unbanked_points": {
+                  "type": "integer"
+                },
+                "unredeemed_cards": {
+                  "type": ["integer", "null"]
+                },
+                "user_id": {
+                  "type": "integer"
+                }
+              }
+            },
+            "anniversary": {
+              "type": ["string", "null"],
+              "format": "date"
+            },
+            "avatar_remote_url": {
+              "type": ["string", "null"]
+            },
+            "birthday": {
+              "type": "string",
+              "format": "date",
+              "description": "User's birthday in YYYY-MM-DD format"
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "description": "User's email address"
+            },
+            "external_source": {
+              "type": "string"
+            },
+            "external_source_id": {
+              "type": "string",
+              "description": "External system identifier for the user"
+            },
+            "first_name": {
+              "type": "string",
+              "description": "User's first name"
+            },
+            "gender": {
+              "type": ["string", "null"]
+            },
+            "guest_type": {
+              "type": "string",
+              "description": "Type of guest (e.g. Loyalty, Guest)"
+            },
+            "last_activity_at": {
+              "type": "string",
+              "format": "date-time",
+              "description": "ISO 8601 timestamp of user's last activity"
+            },
+            "last_name": {
+              "type": "string",
+              "description": "User's last name"
+            },
+            "marketing_email_subscription": {
+              "type": "boolean",
+              "description": "Whether the user is subscribed to marketing emails"
+            },
+            "marketing_pn_subscription": {
+              "type": "boolean",
+              "description": "Whether the user is subscribed to push notifications"
+            },
+            "phone": {
+              "type": ["string", "null"]
+            },
+            "preferred_locale": {
+              "type": ["string", "null"]
+            },
+            "secondary_email": {
+              "type": ["string", "null"]
+            },
+            "signup_channel": {
+              "type": "string",
+              "description": "Channel through which the user signed up (e.g. MobileEmail, Web)"
+            },
+            "sms_subscription": {
+              "type": "boolean",
+              "description": "Whether the user is subscribed to SMS messages"
+            },
+            "unsubscribe_reason": {
+              "type": ["string", "null"]
+            },
+            "unsubscribed": {
+              "type": "boolean",
+              "description": "Whether the user has unsubscribed"
+            },
+            "user_id": {
+              "type": "integer",
+              "description": "Punchh user identifier"
+            },
+            "user_status": {
+              "type": "string",
+              "description": "User account status (e.g. active, inactive)"
+            }
+          }
+        },
+        "user_coupon_redemption_id": {
+          "type": ["string", "null"]
+        },
+        "user_id": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

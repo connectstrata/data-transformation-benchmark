@@ -1,0 +1,18 @@
+{
+  "id": "326451258070",
+  "url": "https://app-na2.hubspot.com/contacts/243123986/record/0-1/326451258070",
+  "archived": false,
+  "createdAt": "2025-11-17T21:57:57.052Z",
+  "updatedAt": "2025-11-17T21:57:58.166Z",
+  "properties": {
+    "email": "thomas.jefferson@example.com",
+    "lastname": "Jefferson",
+    "firstname": "Thomas",
+    "favoriteRestaurant1": "Papa John",
+    "favoriteRestaurant2": "Pizza Hut",
+    "phoneNumber": "6788908780",
+    "createdate": "2025-11-17T21:57:57.052Z",
+    "hs_object_id": "326451258070",
+    "lastmodifieddate": "2025-11-17T21:57:58.166Z"
+  }
+}

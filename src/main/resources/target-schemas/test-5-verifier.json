@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "required": [
+    "attributes"
+  ],
+  "properties": {
+    "attributes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "external_id",
+          "email",
+          "first_name",
+          "last_name"
+        ],
+        "properties": {
+          "external_id": {
+            "type": "string",
+            "const": "7064055069304"
+          },
+          "email": {
+            "type": "string",
+            "const": "bob@biller.com"
+          },
+          "first_name": {
+            "type": "string",
+            "const": "Bob"
+          },
+          "last_name": {
+            "type": "string",
+            "const": "Biller"
+          }
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "purchases": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}
